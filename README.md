@@ -10,4 +10,4 @@ This script is only tested on Mac OSX 10.10.3 and a vagrant box with Ubuntu 14.0
 
 ## Contributing
 
-Feel free to fork this lib and contribute to make it better!
+Feel free to fork this box and contribute to make it better!
