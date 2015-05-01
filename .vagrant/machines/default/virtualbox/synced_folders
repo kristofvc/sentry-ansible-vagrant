@@ -1,0 +1,1 @@
+{"nfs":{"/vagrant":{"type":"nfs","guestpath":"/vagrant","hostpath":"/Users/kvc/Desktop/phansible_sentry-server","disabled":false,"map_uid":504,"map_gid":20,"nfs_udp":true,"nfs_version":3,"uuid":"699692791"}}}

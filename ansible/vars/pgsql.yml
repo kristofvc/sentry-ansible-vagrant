@@ -1,0 +1,4 @@
+pgsql:
+    user: root
+    password: root
+    database: sentry

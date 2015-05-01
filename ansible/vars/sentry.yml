@@ -1,0 +1,8 @@
+sentry:
+    virtualenv: /www/sentry/
+    template: sentry.conf.py.tpl
+    admin_email: kristof.vancauwenbergh@gmail.com
+    admin_password: admin
+    server_email: sentry@sentry.server
+    secret: supersecretkey
+    port: 9000

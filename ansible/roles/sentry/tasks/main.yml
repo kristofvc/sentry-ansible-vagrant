@@ -1,0 +1,31 @@
+- name: Install virtualenv
+  sudo: yes
+  pip: name=virtualenv
+
+- name: Install sentry and create virtualenv if needed
+  sudo: yes
+  pip:
+    name: sentry
+    virtualenv: /www/sentry/
+    virtualenv_site_packages: no
+
+- name: Install sentry[postgres] and create virtualenv if needed
+  sudo: yes
+  pip:
+    name: sentry[postgres]
+    virtualenv: /www/sentry/
+    virtualenv_site_packages: no
+
+- name: Initialize sentry config
+  sudo: yes
+  command: /www/sentry/bin/sentry init /etc/sentry.conf.py
+
+#- name: Change Sentry config
+#  sudo: yes
+#  template: src={{ sentry.template }} dest=/etc/sentry.conf.py
+
+- name: Upgrade sentry schema
+  sudo: yes
+  command: /www/sentry/bin/sentry --config=/etc/sentry.conf.py upgrade
+
+- cron: name="Cleanup sentry" minute="0" hour="3" job="/www/sentry/bin/sentry cleanup --days=30"

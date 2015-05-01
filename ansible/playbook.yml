@@ -1,0 +1,24 @@
+---
+- hosts: all
+  sudo: true
+  vars:
+    web_server: nginxphp
+    hostname: sentry.server
+    servername: sentry.server 192.168.33.89
+    timezone: Europe/Brussels
+  vars_files:
+    - vars/pgsql.yml
+    - vars/sentry.yml
+    - vars/common.yml
+    - [ "vars/nginxphp.yml", "vars/ws_defaults.yml" ]
+  roles:
+    - init
+    - php5-cli
+    - nginx
+    - php5-fpm
+    - pgsql
+    - phpcommon
+    - php-pecl
+    - sentry
+    - supervisor
+    - app
