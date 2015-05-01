@@ -1,4 +1,4 @@
-# Sentry vagrant box
+# [Sentry](https://getsentry.com/welcome/) vagrant box
 
 - `vagrant up`
 - Add `192.168.33.89 sentry.server` to `/etc/hosts`
@@ -6,7 +6,7 @@
 
 ## Testing
 
-This script is only tested on Mac OSX 10.10.3 and a vagrant box with Ubuntu 14.04
+This script was only tested on Mac OSX 10.10.3 and a vagrant box with Ubuntu 14.04
 
 ## Contributing
 
