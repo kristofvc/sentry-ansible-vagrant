@@ -9,6 +9,7 @@
   vars_files:
     - vars/pgsql.yml
     - vars/sentry.yml
+    - vars/supervisor.yml
     - vars/common.yml
     - [ "vars/nginxphp.yml", "vars/ws_defaults.yml" ]
   roles:
