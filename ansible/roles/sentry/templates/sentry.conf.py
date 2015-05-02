@@ -39,6 +39,7 @@ SENTRY_USE_BIG_INTS = True
 # Note: This will be reported back to getsentry.com as the point of contact. See
 # the beacon documentation for more information.
 
+# SENTRY_ADMIN_EMAIL = 'your.name@example.com'
 SENTRY_ADMIN_EMAIL = '{{ sentry.admin_email }}'
 
 SENTRY_FEATURES['auth:register'] = False

@@ -1,9 +1,9 @@
 sentry:
     virtualenv: /www/sentry/
-    template: sentry.conf.py.tpl
+    template: sentry.conf.py
     admin_email: admin@sentry.server
     admin_password: admin
     server_email: sentry@sentry.server
-    secret: Nbgur+MFC+F708EeDqCToHquoGk56SUCXPT6PhZT5IssWysFop5XGw==
+    secret: VDpBG3DQOapXLkDqQDt8ToJd4ty6/1GOvpTHUO4o0sHtDIMAIKzxZQ==
     port: 9000
     mailgun_key: ''
