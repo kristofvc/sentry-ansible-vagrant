@@ -3,7 +3,6 @@
   sudo: true
   vars:
     web_server: nginxphp
-    hostname: sentry.server
     servername: sentry.server 192.168.33.89
     timezone: Europe/Brussels
   vars_files:

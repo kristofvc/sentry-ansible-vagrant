@@ -143,7 +143,7 @@ SENTRY_FILESTORE_OPTIONS = {
 ################
 
 # You MUST configure the absolute URI root for Sentry:
-SENTRY_URL_PREFIX = 'http://{{ hostname }}'  # No trailing slash!
+SENTRY_URL_PREFIX = 'http://{{ sentry.hostname }}'  # No trailing slash!
 
 # If you're using a reverse proxy, you should enable the X-Forwarded-Proto
 # header and uncomment the following settings

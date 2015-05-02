@@ -1,8 +1,11 @@
 # [Sentry](https://getsentry.com/welcome/) vagrant box
 
-- `vagrant up`
+- Run `vagrant up`
 - Add `192.168.33.89 sentry.server` to `/etc/hosts`
+- Run `vagrant ssh`
+- Run `/www/sentry/bin/sentry --config=/etc/sentry.conf.py changepassword sentry@sentry.com` and set a password
 - Go to `http://sentry.server`
+- Log in with `sentry@sentry.com
 
 ## Testing
 
