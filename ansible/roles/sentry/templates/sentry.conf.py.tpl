@@ -39,7 +39,6 @@ SENTRY_USE_BIG_INTS = True
 # Note: This will be reported back to getsentry.com as the point of contact. See
 # the beacon documentation for more information.
 
-# SENTRY_ADMIN_EMAIL = 'your.name@example.com'
 SENTRY_ADMIN_EMAIL = '{{ sentry.admin_email }}'
 
 ###########
@@ -87,7 +86,7 @@ SENTRY_CACHE = 'sentry.cache.redis.RedisCache'
 # on a Python framework called Celery to manage queues.
 
 CELERY_ALWAYS_EAGER = False
-BROKER_URL = 'redis://{{ hostname }}:6379'
+BROKER_URL = 'redis://localhost:6379'
 
 #################
 ## Rate Limits ##
