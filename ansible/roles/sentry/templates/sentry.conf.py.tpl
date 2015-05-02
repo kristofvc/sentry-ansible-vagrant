@@ -41,6 +41,8 @@ SENTRY_USE_BIG_INTS = True
 
 SENTRY_ADMIN_EMAIL = '{{ sentry.admin_email }}'
 
+SENTRY_FEATURES['auth:register'] = False
+
 ###########
 ## Redis ##
 ###########
@@ -153,8 +155,6 @@ SENTRY_WEB_OPTIONS = {
     # 'secure_scheme_headers': {'X-FORWARDED-PROTO': 'https'},
 }
 
-SENTRY_FEATURES['auth:register'] = False
-
 #################
 ## Mail Server ##
 #################
@@ -175,7 +175,7 @@ SERVER_EMAIL = '{{ sentry.server_email }}'
 
 # If you're using mailgun for inbound mail, set your API key and configure a
 # route to forward to /api/hooks/mailgun/inbound/
-MAILGUN_API_KEY = ''
+MAILGUN_API_KEY = '{{ sentry.mailgun_key }}'
 
 ###########
 ## etc. ##

@@ -6,3 +6,4 @@ sentry:
     server_email: sentry@sentry.server
     secret: Nbgur+MFC+F708EeDqCToHquoGk56SUCXPT6PhZT5IssWysFop5XGw==
     port: 9000
+    mailgun_key: ''
