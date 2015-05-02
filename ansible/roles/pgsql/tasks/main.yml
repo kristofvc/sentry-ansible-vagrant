@@ -31,3 +31,11 @@
   sudo: yes
   sudo_user: postgres
   postgresql_user: name={{ pgsql.user }} password={{ pgsql.password }} db={{ pgsql.database }} priv=ALL
+
+- name: Set authentication config
+  sudo: yes
+  template: src={{ pgsql.auth_template }} dest=/etc/postgresql/9.4/main/pg_hba.conf
+  notify: Restart postgres
+
+- name: Restart postgres immediately
+  service: name=postgresql enabled=yes state=restarted
