@@ -2,7 +2,7 @@
 
 - `vagrant up`
 - Add `192.168.33.89 sentry.server` to `/etc/hosts`
-- Go to `http://sentry.server:9000`
+- Go to `http://sentry.server`
 
 ## Testing
 
