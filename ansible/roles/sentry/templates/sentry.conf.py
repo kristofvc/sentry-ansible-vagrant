@@ -149,6 +149,7 @@ SENTRY_URL_PREFIX = 'http://{{ hostname }}'  # No trailing slash!
 # header and uncomment the following settings
 # SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
+ALLOWED_HOSTS = ['*']
 SENTRY_WEB_HOST = '0.0.0.0'
 SENTRY_WEB_PORT = {{ sentry.port }}
 SENTRY_WEB_OPTIONS = {
