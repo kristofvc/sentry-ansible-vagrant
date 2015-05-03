@@ -2,6 +2,27 @@
   sudo: yes
   pip: name=virtualenv
 
+- name: Install psycopg2 packages
+  sudo: yes
+  pip: 
+    name: psycopg2
+    virtualenv: /www/sentry
+    virtualenv_site_packages: no
+
+- name: Install python-memcached packages
+  sudo: yes
+  pip: 
+    name: python-memcached
+    virtualenv: /www/sentry
+    virtualenv_site_packages: no  
+
+- name: Install django-pylibmc packages
+  sudo: yes
+  pip: 
+    name: django-pylibmc
+    virtualenv: /www/sentry
+    virtualenv_site_packages: no        
+
 - name: Install Sentry and create virtualenv if needed
   sudo: yes
   pip:
@@ -30,7 +51,7 @@
 
 - name: Create Sentry superuser
   sudo: yes
-  command: /www/sentry/bin/sentry --config=/etc/sentry.conf.py createuser --email=sentry@sentry.com --superuser --no-password --no-input
+  command: /www/sentry/bin/sentry --config=/etc/sentry.conf.py createuser --email={{ sentry.admin_email }} --superuser --no-password --no-input
 
 - name: Set cron to cleanup Sentry
   cron: name="Cleanup sentry" minute="0" hour="3" job="/www/sentry/bin/sentry cleanup --days=30"

@@ -19,8 +19,12 @@ DATABASES = {
         'NAME': '{{ pgsql.database }}',
         'USER': '{{ pgsql.user }}',
         'PASSWORD': '{{ pgsql.password }}',
-        'HOST': '',
+        'HOST': 'localhost',
         'PORT': '',
+
+        'OPTIONS': {
+            'autocommit': True
+        }
     }
 }
 
@@ -69,16 +73,15 @@ SENTRY_REDIS_OPTIONS = {
 #
 #   pip install python-memcached
 #
-# CACHES = {
-#     'default': {
-#         'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
-#         'LOCATION': ['127.0.0.1:11211'],
-#     }
-# }
-#
-# SENTRY_CACHE = 'sentry.cache.django.DjangoCache'
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': ['127.0.0.1:11211'],
+    }
+}
 
-SENTRY_CACHE = 'sentry.cache.redis.RedisCache'
+SENTRY_CACHE = 'sentry.cache.django.DjangoCache'
+ENTRY_CACHE = 'sentry.cache.redis.RedisCache'
 
 ###########
 ## Queue ##
@@ -153,7 +156,8 @@ ALLOWED_HOSTS = ['*']
 SENTRY_WEB_HOST = '0.0.0.0'
 SENTRY_WEB_PORT = {{ sentry.port }}
 SENTRY_WEB_OPTIONS = {
-    # 'workers': 3,  # the number of gunicorn workers
+    'workers': 3,  # the number of gunicorn workers
+    'limit_request_line': 0
     # 'secure_scheme_headers': {'X-FORWARDED-PROTO': 'https'},
 }
 
