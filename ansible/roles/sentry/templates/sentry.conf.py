@@ -92,7 +92,7 @@ ENTRY_CACHE = 'sentry.cache.redis.RedisCache'
 # on a Python framework called Celery to manage queues.
 
 CELERY_ALWAYS_EAGER = False
-BROKER_URL = 'redis://localhost:6379'
+BROKER_URL = 'redis://localhost:6379/0'
 
 #################
 ## Rate Limits ##
