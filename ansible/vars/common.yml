@@ -1,6 +1,5 @@
 ---
-    php_ppa: php5-5.6
     doc_root: /vagrant
-    sys_packages: ["vim", "redis-server", "python", "python-setuptools", "python-pip", "python-dev", "libxslt1-dev", "libxml2-dev", "libz-dev", "libffi-dev", "libssl-dev"]
+    sys_packages: ["vim", "redis-server", "memcached", "libmemcached-dev", "python", "python-setuptools", "python-pip", "python-dev", "libxslt1-dev", "libxml2-dev", "libz-dev", "libffi-dev", "libssl-dev"]
+    pip_packages: ["psycopg2", "python-memcached", "django-pylibmc"]
     dist: precise
-    php_packages: ["php5-pgsql"]
