@@ -8,3 +8,4 @@ sentry:
     secret: VDpBG3DQOapXLkDqQDt8ToJd4ty6/1GOvpTHUO4o0sHtDIMAIKzxZQ==
     port: 9000
     mailgun_key: ''
+    extensions: [ "sentry-github", "sentry-slack" ]

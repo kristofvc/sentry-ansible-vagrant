@@ -37,6 +37,10 @@
     virtualenv: /www/sentry/
     virtualenv_site_packages: no
 
+- name: Install extensions
+  pip: name={{item}} executable=/www/sentry/bin/pip
+  with_items: sentry.extensions    
+
 - name: Initialize Sentry config
   sudo: yes
   command: /www/sentry/bin/sentry init /etc/sentry.conf.py
