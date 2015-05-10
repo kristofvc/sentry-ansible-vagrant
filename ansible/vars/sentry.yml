@@ -9,3 +9,15 @@ sentry:
     port: 9000
     mailgun_key: ''
     extensions: [ "sentry-github", "sentry-slack" ]
+    twitter_consumer_key: ''
+    twitter_consumer_secret: ''
+    facebook_app_id: ''
+    facebook_api_secret: ''
+    google_oauth2_client_id: ''
+    google_oauth2_client_secret: ''
+    github_app_id: ''
+    github_api_secret: ''
+    trello_api_key: ''
+    trello_api_secret: ''
+    bitbucket_consumer_key: ''
+    bitbucket_consumer_secret: ''

@@ -193,25 +193,25 @@ SECRET_KEY = '{{ sentry.secret }}'
 
 # http://twitter.com/apps/new
 # It's important that input a callback URL, even if its useless. We have no idea why, consult Twitter.
-TWITTER_CONSUMER_KEY = ''
-TWITTER_CONSUMER_SECRET = ''
+TWITTER_CONSUMER_KEY = '{{ sentry.twitter_consumer_key }}'
+TWITTER_CONSUMER_SECRET = '{{ sentry.twitter_consumer_secret }}'
 
 # http://developers.facebook.com/setup/
-FACEBOOK_APP_ID = ''
-FACEBOOK_API_SECRET = ''
+FACEBOOK_APP_ID = '{{ sentry.facebook_app_id }}'
+FACEBOOK_API_SECRET = '{{ sentry.facebook_api_secret }}'
 
 # http://code.google.com/apis/accounts/docs/OAuth2.html#Registering
-GOOGLE_OAUTH2_CLIENT_ID = ''
-GOOGLE_OAUTH2_CLIENT_SECRET = ''
+GOOGLE_OAUTH2_CLIENT_ID = '{{ sentry.google_oauth2_client_id }}'
+GOOGLE_OAUTH2_CLIENT_SECRET = '{{ sentry.google_oauth2_client_secret }}'
 
 # https://github.com/settings/applications/new
-GITHUB_APP_ID = ''
-GITHUB_API_SECRET = ''
+GITHUB_APP_ID = '{{ sentry.github_app_id }}'
+GITHUB_API_SECRET = '{{ sentry.github_api_secret }}'
 
 # https://trello.com/1/appKey/generate
-TRELLO_API_KEY = ''
-TRELLO_API_SECRET = ''
+TRELLO_API_KEY = '{{ sentry.trello_api_key }}'
+TRELLO_API_SECRET = '{{ sentry.trello_api_secret }}'
 
 # https://confluence.atlassian.com/display/BITBUCKET/OAuth+Consumers
-BITBUCKET_CONSUMER_KEY = ''
-BITBUCKET_CONSUMER_SECRET = ''
+BITBUCKET_CONSUMER_KEY = '{{ sentry.bitbucket_consumer_key }}'
+BITBUCKET_CONSUMER_SECRET = '{{ sentry.bitbucket_consumer_secret }}'
