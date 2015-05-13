@@ -46,6 +46,10 @@ monolog:
             level: error
 ```
 
+### Demo
+
+See an implemented version by cloning or forking the following repository: [kristofvc/qa-test](https://github.com/kristofvc/qa-test)
+
 ## Testing
 
 This script was only tested on Mac OSX 10.10.3 and a vagrant box with Ubuntu 14.04
