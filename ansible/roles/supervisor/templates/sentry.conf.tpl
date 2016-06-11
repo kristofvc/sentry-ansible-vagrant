@@ -1,6 +1,6 @@
 [program:sentry-web]
 directory={{ sentry.virtualenv }}
-command={{ sentry.virtualenv }}bin/sentry --config=/etc/sentry.conf.py start
+command={{ sentry.virtualenv }}bin/sentry --config=/etc/sentry/sentry.conf.py run web
 autostart=true
 autorestart=true
 redirect_stderr=true
@@ -9,7 +9,7 @@ stderr_logfile=syslog
 
 [program:sentry-worker]
 directory={{ sentry.virtualenv }}
-command={{ sentry.virtualenv }}bin/sentry --config=/etc/sentry.conf.py celery worker -B
+command={{ sentry.virtualenv }}bin/sentry --config=/etc/sentry/sentry.conf.py celery worker -B
 autostart=true
 autorestart=true
 redirect_stderr=true

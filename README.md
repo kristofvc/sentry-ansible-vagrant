@@ -3,7 +3,7 @@
 - Run `vagrant up`
 - Add `192.168.33.89 sentry.server` to `/etc/hosts`
 - Run `vagrant ssh`
-- Run `/www/sentry/bin/sentry --config=/etc/sentry.conf.py changepassword sentry@sentry.com` and set a password
+- Run `/www/sentry/bin/sentry --config=/etc/sentry/sentry.conf.py createuser` and set a username and password
 - Go to `http://sentry.server`
 - Log in with `sentry@sentry.com
 
@@ -52,7 +52,7 @@ See an implemented version by cloning or forking the following repository: [kris
 
 ## Testing
 
-This script was only tested on Mac OSX 10.10.3 and a vagrant box with Ubuntu 14.04
+This ansible scripts were only tested on Mac OSX and a vagrant box with Ubuntu 14.04
 
 ## Contributing
 

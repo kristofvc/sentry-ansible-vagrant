@@ -1,6 +1,6 @@
 - name: Start sentry
-  command: /www/sentry/bin/sentry --config=/etc/sentry.conf.py start
+  command: /www/sentry/bin/sentry --config=/etc/sentry/sentry.conf.py run web
   notify: start sentry workers
 
 - name: Start sentry workers
-  command: /www/sentry/bin/sentry --config=/etc/sentry.conf.py celery worker -B
+  command: /www/sentry/bin/sentry --config=/etc/sentry/sentry.conf.py celery worker -B

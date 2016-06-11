@@ -1,37 +1,31 @@
 - name: Install virtualenv
-  sudo: yes
   pip: name=virtualenv
 
 - name: Install psycopg2 packages
-  sudo: yes
   pip: 
     name: psycopg2
     virtualenv: /www/sentry
     virtualenv_site_packages: no
 
 - name: Install python-memcached packages
-  sudo: yes
   pip: 
     name: python-memcached
     virtualenv: /www/sentry
     virtualenv_site_packages: no  
 
 - name: Install django-pylibmc packages
-  sudo: yes
   pip: 
     name: django-pylibmc
     virtualenv: /www/sentry
     virtualenv_site_packages: no        
 
 - name: Install Sentry and create virtualenv if needed
-  sudo: yes
   pip:
     name: sentry
     virtualenv: /www/sentry/
     virtualenv_site_packages: no
 
 - name: Install Sentry[postgres] and create virtualenv if needed
-  sudo: yes
   pip:
     name: sentry[postgres]
     virtualenv: /www/sentry/
@@ -39,23 +33,19 @@
 
 - name: Install extensions
   pip: name={{item}} executable=/www/sentry/bin/pip
-  with_items: sentry.extensions    
+  with_items: '{{ sentry.extensions }}'   
 
 - name: Initialize Sentry config
-  sudo: yes
-  command: /www/sentry/bin/sentry init /etc/sentry.conf.py
+  command: /www/sentry/bin/sentry init /etc/sentry
 
 - name: Change Sentry config
-  sudo: yes
-  template: src={{ sentry.template }} dest=/etc/sentry.conf.py owner=root group=root mode=644
+  template: src={{ sentry.template }} dest=/etc/sentry/sentry.conf.py owner=root group=root mode=644
 
 - name: Upgrade Sentry schema
-  sudo: yes
-  command: /www/sentry/bin/sentry --config=/etc/sentry.conf.py upgrade
+  command: /www/sentry/bin/sentry --config=/etc/sentry/sentry.conf.py upgrade --noinput
 
 - name: Create Sentry superuser
-  sudo: yes
-  command: /www/sentry/bin/sentry --config=/etc/sentry.conf.py createuser --email={{ sentry.admin_email }} --superuser --no-password --no-input
+  command: /www/sentry/bin/sentry --config=/etc/sentry/sentry.conf.py createuser --email={{ sentry.admin_email }} --superuser --no-password --no-input
 
 - name: Set cron to cleanup Sentry
   cron: name="Cleanup sentry" minute="0" hour="3" job="/www/sentry/bin/sentry cleanup --days=30"

@@ -1,5 +1,6 @@
 ---
     doc_root: /vagrant
-    sys_packages: ["vim", "postfix", "redis-server", "memcached", "libmemcached-dev", "python", "python-setuptools", "python-pip", "python-dev", "libxslt1-dev", "libxml2-dev", "libz-dev", "libffi-dev", "libssl-dev"]
+    sys_packages: ["vim", "postfix", "redis-server", "memcached", "libmemcached-dev", "python", "python-setuptools", "python-pip", "python-dev", "libxslt1-dev", "gcc", "libxml2-dev", "libz-dev", "libffi-dev", "libssl-dev", "libjpeg-dev", "libxslt-dev", "libyaml-dev"]
     pip_packages: ["psycopg2", "python-memcached", "django-pylibmc"]
     dist: precise
+    redis_repository: ppa:chris-lea/redis-server

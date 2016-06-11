@@ -4,7 +4,7 @@ server {
     server_name {{ servername }};
 
     location / {
-      proxy_pass         http://localhost:9000;
+      proxy_pass         http://localhost:{{ sentry.port }};
       proxy_redirect     off;
 
       proxy_set_header   Host              $host;

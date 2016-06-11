@@ -1,6 +1,7 @@
 ---
 - hosts: all
-  sudo: true
+  become: yes
+  become_method: sudo
   vars:
     web_server: nginx
     servername: sentry.server 192.168.33.89

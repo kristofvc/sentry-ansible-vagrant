@@ -1,9 +1,7 @@
 ---
 - name: Install Nginx
-  sudo: yes
-  apt: pkg=nginx state=latest
+  apt: pkg=nginx-full state=latest
 
 - name: Change default nginx site
-  sudo: yes
   template: src={{ ws_template }} dest={{ ws_vhost_path }}/{{ ws_vhost_file }}
   notify: restart nginx
